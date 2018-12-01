@@ -7,8 +7,8 @@ const config = require('./webpack.config.dev.js');
 const app = express();
 const compiler = webpack(config);
 
-const dbGet = require('./db/helpers/get_data.js');
-const dbPost = require('./db/helpers/post_data.js');
+// const dbGet = require('./db/helpers/get_data.js');
+// const dbPost = require('./db/helpers/post_data.js');
 
 var cookieSession = require('cookie-session')
 app.use(cookieSession({
@@ -34,23 +34,10 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 app.use('/public', express.static('public'));
 
-app.get('/db/spots', async function(req, res) {
-  let bounds = JSON.parse(req.query.bounds);
-  let starttime = req.query.starttime.slice(0, 10);
-  let endtime = req.query.endtime.slice(0, 10);
-
-  const results = await dbGet.getAvailableSpots(bounds, starttime, endtime);
-  res.json(results);
+app.get('/test', async function(req, res) {
+  console.log("Testing received");
+  res.status(200).send("test");
 })
-
-// app.get('/db/spots/user', async function(req, res) {
-//   let results = await dbGet.getUserSpots(req.session.user_id)
-//   if (results) {
-//     res.status(200).json(results)
-//   } else {
-//     res.status(404).send('Unable to retrienve any parking spots associated to user')
-//   }
-// })
 
 app.get('/', function(req, res) {
   res.sendFile(path.resolve(__dirname, 'index.html'));
@@ -64,15 +51,10 @@ app.get('/*', function(req, res) {
   })
 })
 
-app.get('/test', async function(req, res) {
-  console.log("test!");
-})
-
 app.listen(process.env.PORT || 8080, function(err) {
   if (err) {
     console.log(err);
     return;
   }
-
   console.log(`Listening at http://localhost:${process.env.PORT || 8080}`);
 });

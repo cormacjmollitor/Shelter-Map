@@ -14,10 +14,10 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    axios.get("/test")
-    .then((res) => {
-      console.log(res);
-    });
+    axios.get(`/test`)
+      .then((result) => {
+        console.log(result);
+    })
   }
 
   render() {

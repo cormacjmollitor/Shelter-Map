@@ -1,0 +1,169 @@
+conn = new Mongo();
+db = conn.getDB("sheltermap");
+db.dropDatabase();
+
+result = db.shelters.insert([
+	{
+		_id: '1',
+		name: 'Aboriginal Shelter Vancouver',
+		address: '201 Central St, Vancouver, BC V6A 4A9',
+		url: 'http://www.vafcs.org/programs/aboriginalshelter/',
+		isMale: true,
+		isFemale: true,
+		isChild: true,
+	    num_beds: 60,
+		num_male: 0,
+		num_female: 0,
+		num_nonbinary: 0,
+		amenities: "Wheelchair accessible. Carts and bikes allowed. Pets allowed. Open to Tri-Cities residents only. Overnight accommodation 7 nights a week. Laundry facilities. Harm reduction."
+	},
+	{
+		_id: '2',
+		name: 'The Salvation Army Belkin House',
+		address: '555 Homer St, Vancouver, BC V6B 1K8',
+		url: 'http://belkinhouse.ca/',
+		isMale: true,
+		isFemale: true,
+		isChild: true,
+	    numbeds: 78,
+		num_male: 0,
+		num_female: 0,
+		num_nonbinary: 0,
+		amenities: 'Wheelchair accessible. Pets allowed. Laundry facilities. Harm reduction. No alcohol/drug use on site. Curfew 10.00pm.'
+	},
+	{
+		_id: '3',
+		name: 'Catholic Charities Mens Hostel',
+		address: '828 Cambie St, Vancouver, BC V6B 2A7',
+		url: 'https://rcav.org/mens-hostel/',
+		isMale: true,
+		isFemale: false,
+		isChild: false,
+	    numbeds: 82,
+		num_male: 0,
+		num_female: 0,
+		num_nonbinary: 0,
+		amenities: 'Wheelchair accessible. Pets allowed. Laundry facilities. Medication/money administration. Harm reduction.'
+	},
+	{
+		_id: '4',
+		name: 'Yukon Shelter and Housing Centre - Lookout Society',
+		address: '2088 Yukon St, Vancouver, BC V5Y 4B1',
+		url: 'https://lookoutsociety.ca/what-we-do/shelters/',
+		isMale: false,
+		isFemale: true,
+		isChild: true,
+	    numbeds: 34,
+		num_male: 0,
+		num_female: 0,
+		num_nonbinary: 0,
+		amenities: 'Wheelchair accessible. Pets allowed. Harm reduction; needle exchange. Medication administration. Intake 8.30 am -7.30pm.'
+	}
+]);
+
+print(result);
+
+result = db.history.insert([
+	{
+		shelter_id: 1,
+		date: "2018-11-29T16:00:00Z",
+		stats: {
+			numbeds: 5,
+			num_male: 12,
+			num_female: 38,
+			num_nonbinary: 5
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-28T16:00:00Z",
+		stats: {
+			numbeds: 10,
+			num_male: 17,
+			num_female: 33,
+			num_nonbinary: 0
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-27T16:00:00Z",
+		stats: {
+			numbeds: 0,
+			num_male: 35,
+			num_female: 20,
+			num_nonbinary: 5
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-26T16:00:00Z",
+		stats: {
+			numbeds: 0,
+			num_male: 13,
+			num_female: 56,
+			num_nonbinary: 2
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-25T16:00:00Z",
+		stats: {
+			numbeds: 1,
+			num_male: 30,
+			num_female: 25,
+			num_nonbinary: 1
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-24T16:00:00Z",
+		stats: {
+			numbeds: 5,
+			num_male: 17,
+			num_female: 33,
+			num_nonbinary: 5
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-23T16:00:00Z",
+		stats: {
+			numbeds: 0,
+			num_male: 31,
+			num_female: 29,
+			num_nonbinary: 0
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-23T16:00:00Z",
+		stats: {
+			numbeds: 0,
+			num_male: 33,
+			num_female: 27,
+			num_nonbinary: 0
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-22T16:00:00Z",
+		stats: {
+			numbeds: 3,
+			num_male: 32,
+			num_female: 25,
+			num_nonbinary: 0
+		}
+	},
+	{
+		shelter_id: 1,
+		date: "2018-11-21T16:00:00Z",
+		stats: {
+			numbeds: 2,
+			num_male: 31,
+			num_female: 27,
+			num_nonbinary: 0
+		}
+	}
+]);
+
+print(result);
