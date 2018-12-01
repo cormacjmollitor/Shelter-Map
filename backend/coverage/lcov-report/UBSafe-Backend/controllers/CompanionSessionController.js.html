@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for UBSafe-Backend/controllers/CompanionSessionController.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">UBSafe-Backend/controllers</a> CompanionSessionController.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>48/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.71% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>48/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//dependencies
+var Expo = require('expo-server-sdk').Expo;
+var express = require('express');
+var admin = require('firebase-admin');
+var db = require('../db');
+var router = express.Router();
+&nbsp;
+var bodyParser = require('body-parser');
+router.use(bodyParser.urlencoded({extended: true}));
+router.use(bodyParser.json());
+&nbsp;
+var User = require('../models/user');
+var Response = require('../models/response');
+var Alert = require('../models/alert');
+var Session = require('../models/companionsession');
+&nbsp;
+/* CREATE A COMPANION SESSION &amp; SEND INVITES TO THE SESSION:
+ *
+ * API Endpoint: POST /companionsession + body:
+ * {
+ *     "travellerID": INSERT_TRAVELLERS_USERID,
+ *     "watcherIDs": [ARRAY_OF_WATCHER_USERIDS],
+ *     "travellerDest": geopoint,
+ *     "travellerSource": geopoint,
+ *     "travellerLocation": geopoint,
+ *     "lastUpdated": dateTime
+ * }
+ */
+router.post('/companionsession', async (req, res) =&gt; {
+    try{
+        let session = await Session.createSession(req.body);
+        let message = Alert.createMessage(session.data.traveller.name, Alert.INVITED_TO_SESSION, session);
+        let tokens = await Session.getWatcherTokensFromIDs(req.body.watcherIDs);
+        res.status(200).send(new Response(200, "", session))
+        Alert.sendNotifications(tokens, message);
+    }
+    catch(err){
+        res.status(404).send(new Response(404, err, ""));
+    }
+});
+&nbsp;
+/* JOIN A COMPANION SESSION:
+ *
+ * API Endpoint: PUT /companionsession/join/ + body
+ * {
+ *      "sessionID": string,
+ *      "watcherID": string
+ * }
+ */
+router.put('/companionsession/join', async (req, res) =&gt; {
+    try{
+        let watcher = await User.getUser(req.body.watcherID);
+        let newWatcher = Session.makeSessionProfile(watcher);
+&nbsp;
+        let sessionRef = db.collection('companion_sessions').doc(req.body.sessionID);
+        await sessionRef.update({joinedWatchers: admin.firestore.FieldValue.arrayUnion(newWatcher)});
+&nbsp;
+        let session = await Session.getSession(req.body.sessionID);
+        let travellerToken = [session.traveller.deviceToken];
+        let message = Alert.createMessage(watcher.userName, Alert.JOINED_SESSION);
+        res.status(200).send(new Response(200, "", "Successfully joined session!"));
+        Alert.sendNotifications(travellerToken, message);
+    }
+    catch(err){
+        res.status(404).send(new Response(404, err, ""));
+    }
+});
+&nbsp;
+&nbsp;
+/* RATE A COMPANION SESSION:
+ *
+ * API Endpoint: POST /companionsession/:sessionID/rate + body:
+ * {
+ *     "rating": number between 0 and 5
+ * }
+ */
+router.post('/companionsession/:sessionID/rate', async (req, res) =&gt; {
+    try {
+        let rating = req.body.rating;
+        if(isNaN(rating) || rating &gt; 5 || rating &lt; 0)
+        {
+		throw new Error("Invalid Rating");
+        }
+        let session = await Session.getSession(req.params.sessionID);
+        session.joinedWatchers.forEach(async (watcher) =&gt; {
+                let user = await User.getUser(watcher.id);
+                <span class="missing-if-branch" title="else path not taken" >E</span>if(!user.ratingHistory)
+                {
+                    user.ratingHistory = [];
+                }
+                user.ratingHistory.push(req.body.rating);
+                user.rating = User.getAvgRating(user.ratingHistory);
+                await db.collection('users').doc(user.userID).update(user);
+        });
+        res.status(200).send(new Response(200, "", session));
+    }
+    catch(err){
+        res.status(404).send(new Response(404, err, ""));
+    }
+});
+&nbsp;
+module.exports.router = router;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Nov 27 2018 19:46:40 GMT-0800 (Pacific Standard Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>
