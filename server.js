@@ -43,14 +43,14 @@ app.get('/db/spots', async function(req, res) {
   res.json(results);
 })
 
-app.get('/db/spots/user', async function(req, res) {
-  let results = await dbGet.getUserSpots(req.session.user_id)
-  if (results) {
-    res.status(200).json(results)
-  } else {
-    res.status(404).send('Unable to retrienve any parking spots associated to user')
-  }
-})
+// app.get('/db/spots/user', async function(req, res) {
+//   let results = await dbGet.getUserSpots(req.session.user_id)
+//   if (results) {
+//     res.status(200).json(results)
+//   } else {
+//     res.status(404).send('Unable to retrienve any parking spots associated to user')
+//   }
+// })
 
 app.get('/', function(req, res) {
   res.sendFile(path.resolve(__dirname, 'index.html'));
@@ -62,6 +62,10 @@ app.get('/*', function(req, res) {
       res.status(500).send(err)
     }
   })
+})
+
+app.get('/test', async function(req, res) {
+  console.log("test!");
 })
 
 app.listen(process.env.PORT || 8080, function(err) {
