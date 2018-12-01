@@ -1,0 +1,94 @@
+
+#dateselect{
+  height: 50px;
+  .dateheader{
+    margin: 0 auto;
+  }
+  .DateRangePicker {
+    position: relative;
+    margin: 43px 206px;
+    .DateInput{
+      height: 46px;
+    }
+}
+}
+
+#welcome_text_div {
+  position: relative;
+  margin: 11% auto;
+  .headertext {
+    color: white;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .welcometext {
+    position: relative;
+    top: -20px;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+}
+
+.search-container {
+  position: relative;
+  top: 100px;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+input#search-bar {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: left;
+  border: 1px solid #D0CFCE;
+  outline: none;
+  background-color: white;
+  &:focus {
+    border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF;
+    &::-webkit-input-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0;
+    }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0;
+    }
+    &:-ms-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0;
+    }
+  }
+}
+
+.search-icon {
+  position: relative;
+  float: right;
+  width: 75px;
+  height: 75px;
+  top: -60px;
+  right: -10px;
+}
+
+.backdrop {
+  display: block;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: black;
+  opacity: 0.56;
+  z-index: 1;
+}
+

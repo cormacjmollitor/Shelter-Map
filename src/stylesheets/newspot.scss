@@ -1,0 +1,173 @@
+/*custom font*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+#msform {
+  float: left;
+  width: 40%;
+  margin-left: 12vw;
+  text-align: center;
+  position: relative;
+  // position: absolute;
+  left: 9vw;
+  top: 9vh;
+}
+
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10%;
+  top: 75px;
+  position: relative;
+}
+
+/*Hide all except first fieldset*/
+
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+/*inputs*/
+
+#msform input,
+#msform textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+
+/*buttons*/
+
+#msform .action-button {
+  margin-top: 30px;
+  width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+.imageupload {
+  float: right;
+}
+
+/*picture buttons*/
+
+#formimagebox .action-button {
+  width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 25px;
+  margin: 10px 15px;
+}
+
+textarea{
+  resize: none;
+}
+
+#formimagebox .action-button:hover,
+#formimagebox .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+/*headings*/
+
+.fs-title {
+  font-family: sans-serif;
+  font-size: 2em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.file-upload {
+  position: relative;
+  display: inline-block;
+  left: 63vw;
+  top: 175px;
+}
+
+.file-upload__label {
+  font-family: sans-serif;
+  margin-left: 35px;
+  display: block;
+  padding: 1em 2em;
+  color: #fff;
+  background: #27AE60;
+  border-radius: .4em;
+  transition: background .3s;
+  text-align: center;
+  width: 300px;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+  }
+}
+
+.file-upload__input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 1;
+  width: 0;
+  height: 100%;
+  opacity: 0;
+}
+
+.file-upload h3 {
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  color: whitesmoke
+}
+
+.file-upload img {
+  position: absolute;
+  margin-left: 80px;
+  margin-top: 30px;
+  width: 100px;
+}
+
+#pictureupload {
+  font-family: sans-serif;
+  font-size: 20px;
+  top: 26vh;
+  .action-button {
+    margin-top: 30px;
+    width: 100px;
+    height: 36px;
+    background: #27AE60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+  }
+  .form-control {
+    width: 100%;
+  }
+  h2 {
+    color: white;
+  }
+}
