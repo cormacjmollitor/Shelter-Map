@@ -31,9 +31,6 @@ export default class App extends Component {
               <Link to="/" onClick={this.refreshpage} style={{ textDecoration: 'none' }}><h1 className="logo">SpotSharer</h1></Link>
             </div>
           </nav>
-
-          <Route exact path="/search" component={MapContainer} key="search" />
-
           <Route exact path="/" render={(defprops) => <Home isLoggedIn={this.state.isLoggedIn} {...defprops} />} />
         </main>
       </Router>
