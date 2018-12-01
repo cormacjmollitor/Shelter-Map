@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 import Home from './views/home.jsx';
+import ShelterList from './views/ShelterList.jsx';
 import axios from 'axios';
 
 require('./../stylesheets/app.scss');
@@ -32,6 +33,7 @@ export default class App extends Component {
             </div>
           </nav>
           <Route exact path="/" render={(defprops) => <Home isLoggedIn={this.state.isLoggedIn} {...defprops} />} />
+          <Route exact path="/shelters" render={() => <ShelterList />} />
         </main>
       </Router>
     );
