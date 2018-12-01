@@ -12,6 +12,8 @@ import moment from 'moment';
 import { DateRangePicker } from 'react-dates';
 import api from './../helpers/api.js';
 import 'react-dates/lib/css/_datepicker.css';
+import axios from 'axios';
+
 
 export default class Home extends Component {
   constructor(props) {
@@ -32,7 +34,6 @@ export default class Home extends Component {
     this.setStateAsync = this.setStateAsync.bind(this);
     this.pushToResults = this.pushToResults.bind(this);
   }
-
 
   handleChangeStart(date) {
     this.setState({
@@ -72,7 +73,6 @@ export default class Home extends Component {
       })
       .catch((error) => console.log(error));
   }
-
 
   render() {
     const { from } = this.props.location.state || '/';

@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Card, Collapse, CardText, CardBody,
   CardTitle, CardSubtitle, Button, FormGroup, Input, Label } from 'reactstrap';
+import axios from 'axios';
 
 const google_maps = "https://www.google.ca/maps/place/";
 export default class ShelterList extends React.Component {
@@ -9,18 +10,27 @@ export default class ShelterList extends React.Component {
     filterToggled: false,
     femaleOnly: false,
     youthOnly: false,
-
-    shelters: [
-      {name: 'Womens shelter', address: '2205 Lower Mall', beds_available: 4, category: '', isMale: false, isFemale: true, isYouth: false},
-      {name: 'Not Womens shelter', address: '2205 Lower Mall', beds_available: 4, category: '', isMale: true, isFemale: true, isYouth: false},
-      {name: 'Youth shelter', address: '2205 Lower Mall', beds_available: 4, category: '', isMale: false, isFemale: true, isYouth: true}
-    ],
-    filteredShelters: [
-      {name: 'Womens shelter', address: '2205 Lower Mall', beds_available: 4, category: '', isMale: false, isFemale: true, isYouth: false},
-      {name: 'Not Womens shelter', address: '2205 Lower Mall', beds_available: 4, category: '', isMale: true, isFemale: true, isYouth: false},
-      {name: 'Youth shelter', address: '2205 Lower Mall', beds_available: 4, category: '', isMale: false, isFemale: true, isYouth: true}
-    ]
+    
+    shelters: [],
+    filteredShelters: []
   }
+
+  componentDidMount(){
+    self = this;
+    axios.post("/shelters")
+    .then((res) => {
+      var result = [];
+      console.log(res.data);
+      var shelterobj = res.data;
+      for(var key in shelterobj){
+        result.push(shelterobj[key]);
+      }
+      self.setState({shelters: result});
+      self.setState({filteredShelters: result});
+      console.log(result);
+    });
+  }
+
 
   getDirections(shelter) {
     var url = google_maps + shelter.address.split(' ').join('+');
@@ -96,7 +106,7 @@ export default class ShelterList extends React.Component {
             <a className="navbar-brand" href="#">INSERT LOGO HERE</a>
 
             <form className="form-inline my-2 my-lg-0">
-              <input class="form-control"
+              <input className="form-control"
                      type="text"
                      placeholder="Search Shelters"
                      aria-label="Search"
