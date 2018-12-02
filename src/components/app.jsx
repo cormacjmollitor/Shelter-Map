@@ -25,6 +25,7 @@ export default class App extends Component {
     return (
       <Router>
         <main>
+        <Route exact path="/" render={() => <ShelterList />} />
           <Route exact path="/shelters" render={() => <ShelterList />} />
           <Route exact path="/signin" render={() => <SignIn />} />
           <Route exact path="/shelter1/stats" render={() => <Stats />} />
