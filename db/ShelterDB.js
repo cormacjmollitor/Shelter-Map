@@ -23,21 +23,24 @@ function ShelterDB(mongoUrl, dbName){
 }
 
 ShelterDB.prototype.getShelters = function(queryParams){
+	// No queryparams in this moment, just return all shelters
 	return this.connected.then(function(db){
-		// TODO: Implement functionality
+		return db.collection("shelters").find({}).toArray();
 	})
 }
 
 ShelterDB.prototype.addShelter = function(info){
 	return this.connected.then(function(db){
-		// TODO: Implement functionality
+		return db.collection("shelters").insertOne(info).then((res) => {
+			console.log('Successfully inserted new shelter entry');
+		});
 	})
 }
 
-//Input shelter id, return stats object promise
-ShelterDB.prototype.getStats = function(id){
+ShelterDB.prototype.getStats = function(shelter_id){
+	//return stats of a specific shelter
 	return this.connected.then(function(db){
-		// TODO: Implement functionality
+		return db.collection("history").find({"_id": shelter_id}).toArray();
 	})
 }
 

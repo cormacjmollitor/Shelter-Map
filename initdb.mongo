@@ -8,13 +8,17 @@ result = db.shelters.insert([
 		name: 'Aboriginal Shelter Vancouver',
 		address: '201 Central St, Vancouver, BC V6A 4A9',
 		url: 'http://www.vafcs.org/programs/aboriginalshelter/',
-		isMale: true,
+		isMale: false,
 		isFemale: true,
-		isChild: true,
-	    num_beds: 60,
+		isYouth: true,
+	    beds_available: 60,
 		num_male: 0,
 		num_female: 0,
 		num_nonbinary: 0,
+		num_minor: 0,
+		num_adult: 0,
+		num_senior: 0,
+		category: '',
 		amenities: "Wheelchair accessible. Carts and bikes allowed. Pets allowed. Open to Tri-Cities residents only. Overnight accommodation 7 nights a week. Laundry facilities. Harm reduction."
 	},
 	{
@@ -24,11 +28,15 @@ result = db.shelters.insert([
 		url: 'http://belkinhouse.ca/',
 		isMale: true,
 		isFemale: true,
-		isChild: true,
-	    numbeds: 78,
+		isYouth: true,
+	    beds_available: 78,
 		num_male: 0,
 		num_female: 0,
 		num_nonbinary: 0,
+		num_minor: 0,
+		num_adult: 0,
+		num_senior: 0,
+		category: '',
 		amenities: 'Wheelchair accessible. Pets allowed. Laundry facilities. Harm reduction. No alcohol/drug use on site. Curfew 10.00pm.'
 	},
 	{
@@ -38,11 +46,15 @@ result = db.shelters.insert([
 		url: 'https://rcav.org/mens-hostel/',
 		isMale: true,
 		isFemale: false,
-		isChild: false,
-	    numbeds: 82,
+		isYouth: false,
+	    beds_available: 82,
 		num_male: 0,
 		num_female: 0,
 		num_nonbinary: 0,
+		num_minor: 0,
+		num_adult: 0,
+		num_senior: 0,
+		category: '',	
 		amenities: 'Wheelchair accessible. Pets allowed. Laundry facilities. Medication/money administration. Harm reduction.'
 	},
 	{
@@ -52,11 +64,15 @@ result = db.shelters.insert([
 		url: 'https://lookoutsociety.ca/what-we-do/shelters/',
 		isMale: false,
 		isFemale: true,
-		isChild: true,
-	    numbeds: 34,
+		isYouth: true,
+	    beds_available: 34,
 		num_male: 0,
 		num_female: 0,
 		num_nonbinary: 0,
+		num_minor: 0,
+		num_adult: 0,
+		num_senior: 0,
+		category: '',
 		amenities: 'Wheelchair accessible. Pets allowed. Harm reduction; needle exchange. Medication administration. Intake 8.30 am -7.30pm.'
 	}
 ]);
@@ -68,100 +84,130 @@ result = db.history.insert([
 		shelter_id: 1,
 		date: "2018-11-29T16:00:00Z",
 		stats: {
-			numbeds: 5,
+			beds_available: 5,
 			num_male: 12,
 			num_female: 38,
-			num_nonbinary: 5
+			num_nonbinary: 5,
+			num_minor: 23,
+			num_adult: 17,
+			num_senior: 20
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-28T16:00:00Z",
 		stats: {
-			numbeds: 10,
+			beds_available: 10,
 			num_male: 17,
 			num_female: 33,
-			num_nonbinary: 0
+			num_nonbinary: 0,
+			num_minor: 25,
+			num_adult: 25,
+			num_senior: 10
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-27T16:00:00Z",
 		stats: {
-			numbeds: 0,
+			beds_available: 0,
 			num_male: 35,
 			num_female: 20,
-			num_nonbinary: 5
+			num_nonbinary: 5,
+			num_minor: 12,
+			num_adult: 28,
+			num_senior: 20
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-26T16:00:00Z",
 		stats: {
-			numbeds: 0,
+			beds_available: 0,
 			num_male: 13,
 			num_female: 56,
-			num_nonbinary: 2
+			num_nonbinary: 2,
+			num_minor: 21,
+			num_adult: 27,
+			num_senior: 12
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-25T16:00:00Z",
 		stats: {
-			numbeds: 1,
+			beds_available: 1,
 			num_male: 30,
 			num_female: 25,
-			num_nonbinary: 1
+			num_nonbinary: 1,
+			num_minor: 20,
+			num_adult: 20,
+			num_senior: 20
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-24T16:00:00Z",
 		stats: {
-			numbeds: 5,
+			beds_available: 5,
 			num_male: 17,
 			num_female: 33,
-			num_nonbinary: 5
+			num_nonbinary: 5,
+			num_minor: 13,
+			num_adult: 26,
+			num_senior: 21
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-23T16:00:00Z",
 		stats: {
-			numbeds: 0,
+			beds_available: 0,
 			num_male: 31,
 			num_female: 29,
-			num_nonbinary: 0
+			num_nonbinary: 0,
+			num_minor: 20,
+			num_adult: 20,
+			num_senior: 20
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-23T16:00:00Z",
 		stats: {
-			numbeds: 0,
+			beds_available: 0,
 			num_male: 33,
 			num_female: 27,
-			num_nonbinary: 0
+			num_nonbinary: 0,
+			num_minor: 13,
+			num_adult: 25,
+			num_senior: 22
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-22T16:00:00Z",
 		stats: {
-			numbeds: 3,
+			beds_available: 3,
 			num_male: 32,
 			num_female: 25,
-			num_nonbinary: 0
+			num_nonbinary: 0,
+			num_minor: 13,
+			num_adult: 16,
+			num_senior: 31
 		}
 	},
 	{
 		shelter_id: 1,
 		date: "2018-11-21T16:00:00Z",
 		stats: {
-			numbeds: 2,
+			beds_available: 2,
 			num_male: 31,
 			num_female: 27,
-			num_nonbinary: 0
+			num_nonbinary: 0,
+			num_minor: 32,
+			num_adult: 17,
+			num_senior: 11
 		}
 	}
 ]);

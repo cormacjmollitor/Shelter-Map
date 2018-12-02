@@ -7,8 +7,8 @@ const config = require('./webpack.config.dev.js');
 const app = express();
 const compiler = webpack(config);
 
-// const dbGet = require('./db/helpers/get_data.js');
-// const dbPost = require('./db/helpers/post_data.js');
+var ShelterDB = require('./db/ShelterDB.js');
+var db = new ShelterDB('mongodb://localhost:27017', 'sheltermap');
 
 var cookieSession = require('cookie-session')
 app.use(cookieSession({
@@ -49,7 +49,41 @@ app.get('/*', function(req, res) {
       res.status(500).send(err)
     }
   })
-})
+});
+
+app.post('/shelters', async function(request, response) {
+  console.log("Client requesting shelters info");
+  db.getShelters().then((res) => {
+    var result = {};
+    console.log(res);
+    res.forEach(shelter => {
+      result[shelter._id] = shelter;
+    });
+    response.status(200).send(JSON.stringify(result));
+  })
+});
+
+app.post('/history', async function(request, response) {
+  console.log("Client requesting shelters stats");
+  db.getStats(request.query.shelterid).then((res) => {
+    var result = {};
+    res.forEach(stat => {
+      result[stat._id] = stat;
+    });
+    response.status(200).send(JSON.stringify(result));
+  })
+});
+
+app.post('/newshelter', async function(request, response) {
+  console.log("Client submitting new shelter");
+  db.addShelter(request.body).then((res) => {
+    var result = {};
+    res.forEach(stat => {
+      result[stat._id] = stat;
+    });
+    response.status(200).send(JSON.stringify(result));
+  })
+});
 
 app.listen(process.env.PORT || 8080, function(err) {
   if (err) {
