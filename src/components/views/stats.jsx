@@ -2,7 +2,7 @@ import { Chart } from "react-google-charts";
 import { NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, CardBody, CardTitle, CardText, CardSubtitle } from 'reactstrap';
 import React, { Component } from "react";
 import axios from 'axios';
-
+import logo from '../../../images/blue-logo.png';
 
 export default class Stats extends Component {
     constructor(props) {
@@ -113,7 +113,7 @@ export default class Stats extends Component {
         <div className = "stats">
           <div className="Navbar">
             <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-              <a className="navbar-brand" href="#"><img src="../../../images/white-logo.png" alt="logo" height="42" width="42"/></a>
+            <a className="navbar-brand" href="#"><img style={{width: "50px", height: "50px"}} src={logo} alt="logo"/>&nbsp; Sheltermap</a>
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <div className="navbar-nav ml-auto">
                   <NavItem>
