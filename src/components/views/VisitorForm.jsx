@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import houseimage from '../../../images/icon-desk.png';
+import {NavItem, NavLink} from 'reactstrap'
+import logo from '../../../images/blue-logo.png';
+
+
 
 class VisitorForm extends Component {
     constructor(props) {
@@ -105,7 +110,23 @@ class VisitorForm extends Component {
         };
 
         return (
-            <form className="col-6" onSubmit={this.handleFormSubmit}>
+            <div>
+                        <div className="Navbar">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+            <a className="navbar-brand" href="#"><img style={{width: "50px", height: "50px"}} src={logo} alt="logo"/>&nbsp; Sheltermap</a>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div className="navbar-nav ml-auto">
+                <NavItem>
+                  <NavLink href="/shelters">Shelter List</NavLink>
+                </NavItem>
+                <a href="/signin"><button type="button" className="btn btn-primary">Shelter Worker's Portal</button></a>
+              </div>
+            </div>
+          </nav>
+        </div>
+            <h1 style={{padding: "16px", position: "absolute"}}>Please Sign In!</h1>
+            <div className="row">
+            <form className="col-6" style={{padding: "83px"}} onSubmit={this.handleFormSubmit}>
                 {/* Age Selector*/}
                 <Select
                     name={"age"}
@@ -139,6 +160,13 @@ class VisitorForm extends Component {
                 />{" "}
                 {/* Clear Form Button */}
             </form>
+            <div class="col-md-6">
+                <img src={houseimage} style={{height: "500px", width:"500px", padding: "47px"}} alt="house-image"/>
+            </div>
+            </div>
+            </div>
+
+            
         );
     }
 }

@@ -101,7 +101,7 @@ export default class ShelterList extends React.Component {
 
   render() {
     return(
-      <div>
+      <div >
         <div className="Navbar">
           <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
             <a className="navbar-brand" href="#"><img style={{width: "50px", height: "50px"}} src={logo} alt="logo"/>&nbsp; Sheltermap</a>
