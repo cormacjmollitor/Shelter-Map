@@ -1,8 +1,7 @@
 import { Chart } from "react-google-charts";
-import { NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, CardBody, CardTitle, CardText, CardSubtitle } from 'reactstrap';
+import { NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, CardBody, CardTitle, CardText, CardSubtitle, CardImg } from 'reactstrap';
 import React, { Component } from "react";
-import axios from 'axios';
-
+import image from '../../../images/shelter-aboriginal.png';
 
 export default class Stats extends Component {
     constructor(props) {
@@ -135,17 +134,18 @@ export default class Stats extends Component {
                     data={this.agedata}
                     options={this.optionsAge}
                     rootProps={{ 'data-testid': '3' }}
-                />             
+                />     
               </div>
             </div>
             <div class="col-md-6">
               <Card>
                 <CardBody>
+                <CardImg top src={image} style={{width: "400px", height: "400px", display: "block", marginLeft:"auto", marginRight:"auto", marginBottom: "10px"}}/>
                   <CardTitle>Aboriginal Shelter Vancouver</CardTitle>
                   <CardSubtitle>201 Central Street</CardSubtitle>
                   <CardText>Beds Available: 60</CardText>
                 </CardBody>
-              </Card>
+              </Card>  
             </div>
           </div>
           <div class="row">
