@@ -1,5 +1,5 @@
 import { Chart } from "react-google-charts";
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Card, CardBody, CardTitle, CardText, CardSubtitle } from 'reactstrap';
 import React, { Component } from "react";
 import axios from 'axios';
 
@@ -10,6 +10,7 @@ export default class Stats extends Component {
       this.state = {
         dropdownOpen: false,
         type: 1,
+        dropName: "Demographics"
       };
 
       // Hard Coded for now
@@ -74,89 +75,96 @@ export default class Stats extends Component {
 
     loadChart(){
         if(this.state.type === 1){
-            return (
-                <Chart
-                    chartType="Bar"
-                    width="100%"
-                    height="400px"
-                    loader={<div>Loading Chart</div>}
-                    data={this.volumedata}
-                    options={this.optionsDemand}
-                />
-            );
+          return (
+            <Chart
+              chartType="Bar"
+              height="400px"
+              loader={<div>Loading Chart</div>}
+              data={this.volumedata}
+              options={this.optionsDemand}
+              style={{marginLeft: "12px", marginRight: "12px"}}
+            />
+          );
         }
         else{
-            return (
-                <Chart
-                    chartType="Bar"
-                    width="100%"
-                    height="400px"
-                    loader={<div>Loading Chart</div>}
-                    data={this.bedsdata}
-                    options={this.optionsBeds}
-                />
-            )
+          return (
+            <Chart
+                chartType="Bar"
+                width="100%"
+                height="400px"
+                loader={<div>Loading Chart</div>}
+                data={this.bedsdata}
+                options={this.optionsBeds}
+            />
+          )
         }
     }
   
     setTypeVolume(){
-        this.setState({type : 1});
+        this.setState({type : 1, dropName: "Demographics"});
     }
 
     setTypeBeds(){
-        this.setState({type : 0});
+        this.setState({type : 0, dropName: "Traffic"});
     }
 
     render() {
-        return (
-            <div className = "stats">  
-                <div className = "topChart">
-                    <Chart
-                        chartType="PieChart"
-                        width={'600px'}
-                        height={'600px'}
-                        loader={<div>Loading Chart</div>}
-                        data={this.agedata}
-                        options={this.optionsAge}
-                        rootProps={{ 'data-testid': '3' }}
-                    />             
+      return (
+        <div className = "stats">
+          <div className="Navbar">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+              <a className="navbar-brand" href="#"><img src="../../../images/white-logo.png" alt="logo" height="42" width="42"/></a>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="navbar-nav ml-auto">
+                  <NavItem>
+                    <NavLink href="/shelters">Shelter List</NavLink>
+                  </NavItem>
+                  <a href="/signin"><button type="button" className="btn btn-primary">Shelter Worker's Portal</button></a>
                 </div>
-
-                <div className = "botChart">
-                    <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                        <DropdownToggle caret>
-                            Dropdown
-                        </DropdownToggle>
-                        <DropdownMenu>
-                            <DropdownItem header>Chart Type</DropdownItem>
-                            <DropdownItem onClick={this.setTypeBeds}>Traffic</DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem onClick={this.setTypeVolume}>Demographic</DropdownItem>
-                        </DropdownMenu>
-                    </Dropdown>
-                    
-                    {this.loadChart()}
-                </div>
-
-                {/* <Chart
-                    chartType="Bar"
-                    width="100%"
-                    height="400px"
-                    loader={<div>Loading Chart</div>}
-                    data={this.volumedata}
-                    options={this.optionsDemand}
-                />
-
+              </div>
+            </nav>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div className = "topChart">
                 <Chart
-                    chartType="Bar"
-                    width="100%"
-                    height="400px"
+                    chartType="PieChart"
+                    width={'600px'}
+                    height={'600px'}
                     loader={<div>Loading Chart</div>}
-                    data={this.bedsdata}
-                    options={this.optionsBeds}
-                /> */}
-
+                    data={this.agedata}
+                    options={this.optionsAge}
+                    rootProps={{ 'data-testid': '3' }}
+                />             
+              </div>
             </div>
-          );
+            <div class="col-md-6">
+              <Card>
+                <CardBody>
+                  <CardTitle>Aboriginal Shelter Vancouver</CardTitle>
+                  <CardSubtitle>201 Central Street</CardSubtitle>
+                  <CardText>Beds Available: 60</CardText>
+                </CardBody>
+              </Card>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+                <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} style={{marginBottom: "10px", marginLeft: "10px"}}>
+                  <DropdownToggle caret>
+                      {this.state.dropName}
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem header>Chart Type</DropdownItem>
+                    <DropdownItem onClick={this.setTypeBeds}>Traffic</DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem onClick={this.setTypeVolume}>Demographic</DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+                {this.loadChart()}
+            </div>
+          </div>
+        </div>
+      );
     }
 };
