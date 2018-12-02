@@ -5,6 +5,7 @@ import ShelterList from './views/ShelterList.jsx';
 import SignIn from './views/SignIn.jsx';
 import axios from 'axios';
 import Stats from './views/stats.jsx';
+import VisitorForm from "./views/VisitorForm";
 
 export default class App extends Component {
   constructor(props) {
@@ -27,6 +28,7 @@ export default class App extends Component {
           <Route exact path="/shelters" render={() => <ShelterList />} />
           <Route exact path="/signin" render={() => <SignIn />} />
           <Route exact path="/shelter1/stats" render={() => <Stats />} />
+            <Route exact path="/visitorform" render={() => <VisitorForm />} />
         </main>
       </Router>
     );
