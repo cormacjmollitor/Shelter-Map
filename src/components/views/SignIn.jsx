@@ -1,8 +1,6 @@
 
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../../stylesheets/signin.scss'
-
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class SignIn extends React.Component {
@@ -21,7 +19,6 @@ export default class SignIn extends React.Component {
   }
 
   render(){
-    var disabled = this.state.email.length.value == 0 || this.state.password.length.value == 0;
     return(
       <div>
         <div className="row">
@@ -38,12 +35,12 @@ export default class SignIn extends React.Component {
                 <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
               </FormGroup>
             </Form>
-            <Button color="primary" 
-                    
+            <a href="/shelter1/stats"><Button color="primary"
                     style={{ marginRight: '5px', cursor: 'pointer', width: "100%"}}
                       >
                       Login
             </Button>
+            </a>
           </div>
         </div>
       </div>
