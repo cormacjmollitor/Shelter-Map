@@ -11,6 +11,8 @@ export default class Stats extends Component {
         dropdownOpen: false,
         type: 1,
       };
+
+      // Hard Coded for now
         this.volumedata = [
             ["Date", "Male", "Female", "Other"],
             ["Nov 24th", 22, 32, 2],
