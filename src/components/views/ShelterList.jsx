@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Card, Collapse, CardText, CardBody,
   CardTitle, CardSubtitle, Button, FormGroup, Input, Label, NavItem, NavLink } from 'reactstrap';
 import axios from 'axios';
+import logo from '../../../images/blue-logo.png';
 
 const google_maps = "https://www.google.ca/maps/place/";
 export default class ShelterList extends React.Component {
@@ -103,7 +104,7 @@ export default class ShelterList extends React.Component {
       <div>
         <div className="Navbar">
           <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-            <a className="navbar-brand" href="#"><img src="./../../images/white-logo.png" alt="logo" height="42" width="42"></a>
+            <a className="navbar-brand" href="#"><img style={{width: "50px", height: "50px"}} src={logo} alt="logo"/>&nbsp; Sheltermap</a>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <div className="navbar-nav ml-auto">
                 <NavItem>
