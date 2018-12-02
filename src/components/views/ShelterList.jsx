@@ -103,7 +103,7 @@ export default class ShelterList extends React.Component {
       <div>
         <div className="Navbar">
           <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-            <a className="navbar-brand" href="#">INSERT LOGO HERE</a>
+            <a className="navbar-brand" href="#"><img src="./../../images/white-logo.png" alt="logo" height="42" width="42"></a>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <div className="navbar-nav ml-auto">
                 <NavItem>
