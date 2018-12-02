@@ -2,6 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import houseimage from '../../../images/icon-shelter.png';
 
 export default class SignIn extends React.Component {
 
@@ -22,17 +23,19 @@ export default class SignIn extends React.Component {
     return(
       <div>
         <div className="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
+          <div class="col-md-6">
+            <img src={houseimage} style={{height: "500px", width:"500px", padding: "47px"}} alt="house-image"/>
+          </div>
+          <div class="col-md-6" style={{ padding: "57px"}}>
             <h3 style={{color: '#428bca', textAlign: 'center'}}>Login</h3>
             <Form>
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+                <Input type="email" name="email" id="exampleEmail" placeholder="Enter Email" />
               </FormGroup>
               <FormGroup>
                 <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+                <Input type="password" name="password" id="examplePassword" placeholder="Enter Password" />
               </FormGroup>
             </Form>
             <a href="/shelter1/stats"><Button color="primary"
