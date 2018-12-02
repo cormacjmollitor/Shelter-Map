@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import ShelterList from './views/ShelterList.jsx';
 import SignIn from './views/SignIn.jsx';
 import axios from 'axios';
+import Stats from './views/stats.jsx';
 
 export default class App extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ export default class App extends Component {
           </div>
           <Route exact path="/shelters" render={() => <ShelterList />} />
           <Route exact path="/signin" render={() => <SignIn />} />
+          <Route exact path="/shelter1/stats" render={() => <Stats />} />
         </main>
       </Router>
     );
