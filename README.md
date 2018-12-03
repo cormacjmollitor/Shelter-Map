@@ -1,5 +1,5 @@
 # ShelterMap (2nd Place 2018 UBC Local Hack Day Winner)
-ShelterMap is a web app that allows homeless people to easily find nearby shelters while allowing facilities to track statistics in order to distribute resources more efficiently.
+ShelterMap is built in response to the growing homelessness problem in the Greater Vancouver area. Sheltermap is a web app that allows those who are experiencing homelessness to easily find local shelters in their community. It also gives social wokers the ability to keep track of who uses their facilities through a centralized database. Long-term trends are generated which allows policy makers to visualize the impact of the current social support system.
 
 ## Getting started
 
