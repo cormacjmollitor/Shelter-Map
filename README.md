@@ -1,4 +1,4 @@
-# ShelterMap (Second Place UBC Local Hacks Winner)
+# ShelterMap (Second Place 2018 UBC Local Hack Day Winner)
 ShelterMap is a web app that allows homeless people to easily find nearby shelters while allowing facilities to track statistics in order to distribute resources more efficiently.
 
 ## Getting started
